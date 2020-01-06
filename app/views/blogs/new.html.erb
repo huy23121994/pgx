@@ -1,0 +1,13 @@
+<h1>hello</h1>
+<%= form_with scope: :blog, url: blogs_path, local: true do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </p>
+  <%= f.submit "Submit" %>
+  
+<% end %>
