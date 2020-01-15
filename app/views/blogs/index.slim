@@ -1,0 +1,19 @@
+p
+  a href="#{new_blog_path}" Create blog
+table
+  tr
+    th id
+    th title
+    th content
+    th action
+  - @blogs.each do |blog|
+    tr
+      td = blog.id
+      td = blog.title
+      td = blog.content
+      td
+        a href="#{blog_path blog}" Show
+        span  |
+        a href="#{edit_blog_path blog}"  Edit 
+        span |
+        = link_to "Delete", blog_path(blog), method: :delete, data: {confirm: 'Are you sure?'}

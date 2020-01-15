@@ -1,0 +1,15 @@
+h1 Edit User ##{@user.id}
+
+= form_with model: @user, local: true do |f|
+  div
+    label Name
+    = f.text_field :name
+  br/
+  div 
+    label Age
+    = f.text_field :age
+  br/
+  div
+    button Submit
+
+a href="/users" Back
