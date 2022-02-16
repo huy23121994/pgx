@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container } from "@chakra-ui/layout";
+import { ChakraProvider } from "@chakra-ui/react";
+import Dashboard from "./Dashboard";
+import theme from "./theme";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <Container maxW="container.xl" py="20">
+        <Dashboard />
+      </Container>
+    </ChakraProvider>
   );
-}
+};
 
 export default App;
