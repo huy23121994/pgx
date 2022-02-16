@@ -8,6 +8,8 @@ export type Pega = {
   renterId: number;
 };
 
+export const PROXY_CORS = "https://dev-krystal-proxy.knstats.com";
+
 export function ellipsis(address: string) {
   return address
     ? `${address.substring(0, 5)}...${address.substring(address.length - 4)}`
@@ -16,7 +18,7 @@ export function ellipsis(address: string) {
 
 export async function fetchPegas(id: number): Promise<Pega> {
   return new Promise((resolve, reject) => {
-    fetch(`https://api.pegaxy.io/pega/${id}`)
+    fetch(`${PROXY_CORS}/https://api.pegaxy.io/pega/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status) {
